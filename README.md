@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Insure landing page](https://ryusuke66,github.io/insure-landing-page)
+- Live Site URL: [Insure landing page](https://ryusuke66.github.io/insure-landing-page)
 
 ## My process
 
