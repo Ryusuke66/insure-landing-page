@@ -1,0 +1,576 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    transition: .2s;
+}
+
+h1, h2, h3 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+}
+
+/* Header Start */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+}
+
+header ul {
+    display: none;
+}
+
+.menu-icon {
+	width: 30px;
+    height: 30px;
+	cursor: pointer;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 6px;
+}
+
+.menu-icon span {
+	display:block;
+	width:100%;
+	height: 2px;
+	background: black;
+	border-radius: 3px;
+	transition: .5s;
+}
+
+.l2 {
+	margin:3px auto;
+}
+
+.active .l1 {
+	animation: line1 .8s forwards;
+}
+
+@keyframes line1 {
+	50% {transform: translateY(5px)}
+	100% {transform: translateY(5px) rotate(135deg)}
+}
+
+.active .l2 {
+	animation:line2 .8s forwards;
+}
+
+@keyframes line2 {
+	0% {transform: scale(1); opacity: 1}
+	100% {transform: scale(0); opacity: 0}
+}
+
+.active .l3 {
+	animation: line3 .8s forwards;
+}
+
+@keyframes line3 {
+	50% {transform: translateY(-5px)}
+	100% {transform:translateY(-5px) rotate(45deg)}
+}
+
+.inactive .l1 {
+	animation:line1-reverse .8s forwards;
+}
+
+@keyframes line1-reverse {
+	0% {transform: translateY(5px) rotate(135deg)}
+	50% {transform: translateY(5px) rotate(0deg)}
+	100% {transform: translateY(0px) rotate(0deg)}
+}
+
+.inactive .l2 {
+	opacity: 0;
+	animation: line2-reverse .8s forwards;
+	animation-delay: .2s;
+}
+
+@keyframes line2-reverse {
+	0% {transform: scale(0); opacity: 0}
+	100% {transform: scale(1); opacity: 1}
+}
+
+.inactive .l3 {
+	animation: line3-reverse .8s forwards;
+}
+
+@keyframes line3-reverse {
+	0% {transform: translateY(-5px) rotate(45deg)}
+	50% {transform: translateY(-5px) rotate(0deg)}
+	100% {transform: translateY(0px) rotate(0deg)}
+}
+
+/* Header End */
+
+nav {
+    max-height: 0;
+    overflow: hidden;
+    background: url('images/bg-pattern-mobile-nav.svg'), hsl(270, 9%, 17%);
+    background-repeat: no-repeat;
+    background-position: 100% 97%;
+    color: hsl(0, 0%, 98%);
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: .2s;
+}
+
+nav ul li {
+    margin-bottom: 36px;
+}
+
+nav button {
+    text-transform: uppercase;
+    margin-top: -5px;
+    padding: 12px 0px;
+    width: 100%;
+    border: 1px solid hsl(0, 0%, 98%);
+}
+
+nav.on {
+    height: 600px;
+    max-height: 1000px;
+    padding: 45px 25px;
+}
+
+/* Main Start */
+
+main {
+    text-align: center;
+}
+
+.introImg {
+    background: url('images/image-intro-mobile.jpg') no-repeat center;
+    background-size: cover;
+    height: 451px;
+}
+
+.intro {
+    background: url('images/bg-pattern-intro-left-mobile.svg'), url('images/bg-pattern-intro-right-mobile.svg'), hsl(256, 26%, 20%);
+    background-repeat: no-repeat;
+    background-position: 0% 0%, 100% 346px;
+    color: hsl(0, 0%, 98%);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+h1 {
+    font-size: 2.9em;
+    line-height: 1.1;
+}
+
+.intro p {
+    margin: 12px 0 33px;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+.intro button, .find button {
+    border: 1px solid hsl(0, 0%, 98%);
+    padding: 9px 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.content {
+    padding: 142px 25px 80px;
+    background: url('images/bg-pattern-intro-right-mobile.svg') no-repeat;
+    background-position: 100% -154px;
+}
+
+.content hr {
+    border: none;
+    height: 1px;
+    background: hsl(297, 12%, 68%);
+    margin: 0 110px;
+}
+
+h2 {
+    font-size: 2.9em;
+    margin: 35px 0 70px;
+}
+
+h3 {
+    margin: 30px 0 17px;
+    font-size: 1.7em;
+    color: hsl(256, 26%, 20%);
+}
+
+.content > h2 {
+    color: hsl(256, 26%, 20%);
+    
+}
+
+.content div p {
+    line-height: 1.5;
+    color: hsl(273, 4%, 51%);
+}
+
+.find {
+    margin-top: 142px;
+    background: url('images/bg-pattern-how-we-work-mobile.svg'), hsl(256, 26%, 20%);
+    background-repeat: no-repeat;
+    background-position: 100% 0%;
+    color:hsl(0, 0%, 98%);
+    padding: 40px 30px 73px;
+}
+
+.find h2 {
+    font-size: 2.42em;
+    line-height: 1;
+    margin-bottom: 42px;
+}
+
+.find button {
+    padding: 9px 20px;
+}
+
+/* Main End */
+
+/* Footer Start */
+
+footer {
+    background: url('images/bg-pattern-footer-mobile.svg'), hsl(0, 0%, 98%);
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    padding: 87px 25px 40px;
+    text-align: center;
+}
+
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0 37px;
+}
+
+footer ul {
+    text-transform: uppercase;
+}
+
+footer hr {
+    border: none;
+    height: 1px;
+    background: hsl(0, 0%, 85%);
+}
+
+.info {
+    margin-top: 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.header {
+    color: hsl(273, 4%, 51%);
+}
+
+.header ul {
+    color: hsl(256, 26%, 20%);
+    margin: 32px 0 37px;
+}
+
+.header ul li {
+    margin-bottom: 15px;
+}
+
+.attribution {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Footer End */
+
+@media (min-width: 600px) {
+    .content {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    header {
+        padding: 20px 165px 20px 170px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    header ul {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    header ul li {
+        color: hsl(273, 4%, 51%);
+    }
+
+    header ul li:hover {
+        color: black;
+        cursor: pointer;
+    }
+
+    header ul button {
+        border: 1px solid hsl(270, 9%, 17%);
+        color: hsl(270, 9%, 17%);
+        height: 40px;
+        letter-spacing: 2px;
+        width: 144px;
+        text-transform: uppercase;
+        transition: .2s;
+    }
+
+    header ul button:hover {
+        color: white;
+        background: hsl(270, 9%, 17%);
+    }
+
+    nav {
+        display: none;
+    }
+
+    main {
+        position: relative;
+        text-align: left;
+    }
+
+    .introImg {
+        position: absolute;
+        top: 105px;
+        background-image: url('images/bg-pattern-intro-right-desktop.svg'), url('images/image-intro-desktop.jpg');
+        background-position: 85px -186px, center;
+        background-size: auto, cover;
+        height: 550px;
+        width: 450px;
+        right: 65px;
+    }
+
+    .intro {
+        background-image: url('images/bg-pattern-intro-left-desktop.svg'), url('images/bg-pattern-intro-right-desktop.svg');
+        background-position: 0% 430px, 100% -77px;
+        padding: 0 55% 0 65px;
+        align-items: flex-start;
+        height: 600px;
+    }
+
+    .intro h1 {
+        padding-right: 10px;
+        font-size: 4.4em;
+        line-height: 0.9;
+        margin: 40px 0 30px;
+    }
+
+    .intro button:hover, .find button:hover {
+        background: hsl(0, 0%, 98%);
+        color: hsl(256, 26%, 20%);
+    }
+
+    .intro p {
+        margin: 0 0 35px;
+        padding: 0;
+    }
+
+    .content {
+        background: url('images/bg-pattern-intro-left-desktop.svg') no-repeat 0% -170px;
+        padding: 320px 65px 90px;
+    }
+
+    .content hr {
+        display: none;
+    }
+
+    .content h2 {
+        font-size: 4.4em;
+        margin-bottom: 80px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    h3 {
+        margin-top: 25px;
+    }
+
+    .grid div {
+        margin-bottom: 0;
+    }
+
+    .grid div p {
+        line-height: 1.6;
+    }
+
+    .find {
+        margin-top: 160px;
+        padding: 0 50px;
+        height: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-image: url('images/bg-pattern-how-we-work-desktop.svg');
+    }
+
+    .find h2 {
+        font-size: 3.4em;
+        padding-right: 17%;
+        margin: 0;
+    }
+
+    .find button {
+        width: 265px;
+        padding: 9px 0;
+    }
+
+    footer {
+        background-image: url('images/bg-pattern-footer-desktop.svg');
+        background-position: 0% 0%;
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        padding: 65px;
+    }
+
+
+    .socials {
+        justify-self: end;
+        margin: 0;
+    }
+
+    .socials li:hover {
+        cursor: pointer;
+    }
+
+    .socials li:hover svg path {
+        fill: hsl(256, 26%, 20%);
+    }
+
+    footer hr {
+        margin-top: 30px;
+        grid-column: span 2;
+    }
+
+    .header ul li:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .info {
+        gap: 7px;
+        margin-top: 45px;
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+    }
+
+    .attribution {
+        grid-column: span 2;
+    }
+
+    .attribution a {
+        text-decoration: none;
+    }
+
+    .attribution a:hover {
+        text-decoration: underline;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .introImg {
+        background-position: 165px -186px, center;
+        height: 600px;
+        width: 500px;
+        right: 100px;
+    }
+
+    .intro {
+        padding: 0 52% 0 100px;
+    }
+
+    .content {
+        padding: 320px 100px 90px;
+    }
+
+    footer {
+        padding: 65px 100px;
+    }
+
+    .find {
+        padding: 0 80px;
+    }
+
+    .find h2 {
+        padding-right: 25%;
+    }
+    
+}
+
+@media (min-width: 1440px) {
+    .intro {
+        padding: 0 51% 0 165px;
+    }
+
+    .introImg {
+        background-position: 270px -186px, center;
+        right: 165px;
+        height: 650px;
+        width: 540px;
+    }
+
+    .content {
+        padding: 320px 165px 90px;
+    }
+
+    .find h2 {
+        padding-right: 32%;
+    }
+    
+    footer {
+        padding: 65px 165px;
+    }
+}
